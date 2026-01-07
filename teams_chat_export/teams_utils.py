@@ -4,7 +4,7 @@ Microsoft Teams Chat Export Utility Functions
 This module contains utility functions for processing Microsoft Teams chat exports,
 including message processing, image handling, and API interactions.
 
-Author: Teams Chat Export Script
+Author: Alexander Wegner
 Version: v0.1.1
 """
 
@@ -142,7 +142,7 @@ def sort_chats_by_name(chat_list):
     Returns:
         list of tuple: Sorted list of (chat_name, chat_id) tuples, ordered alphabetically by chat_name.
     """
-    return sorted(chat_list, key=lambda x: x[0].lower())
+    return sorted(chat_list, key=lambda x: (x[0] or "").lower())
 
 
 def process_message_content(raw_content, message_id, access_token, image_folder):
